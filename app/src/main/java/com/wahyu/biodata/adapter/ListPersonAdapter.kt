@@ -1,5 +1,6 @@
 package com.wahyu.biodata.adapter
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wahyu.biodata.R
 import com.wahyu.biodata.data.Person
+import com.wahyu.biodata.tool.FaceDetection
 
 class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerView.Adapter<ListPersonAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
+    private val faceDetection = FaceDetection()
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
@@ -24,13 +27,14 @@ class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerVie
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, nick, description, photo) = listPerson[position]
 
-        // Menghubungkan data dengan layout item_row_hero
+        val bitMap = BitmapFactory.decodeResource(holder.itemView.context.resources, photo)
+        faceDetection.faceDetector(bitMap, holder.imgPhoto)
+
         holder.imgPhoto.setImageResource(photo)
         holder.tvNick.text = nick
         holder.tvName.text = name
         holder.tvDescription.text = description
 
-        // Menambahkan event listener untuk klik item
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listPerson[holder.adapterPosition])
         }
@@ -39,7 +43,6 @@ class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerVie
     override fun getItemCount(): Int = listPerson.size
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Menyesuaikan ViewHolder dengan elemen-elemen di item_row_hero.xml
         val imgPhoto: ImageView = itemView.findViewById(R.id.img_person)
         val tvName: TextView = itemView.findViewById(R.id.tv_person_name)
         val tvNick: TextView = itemView.findViewById(R.id.tv_person_nick)
