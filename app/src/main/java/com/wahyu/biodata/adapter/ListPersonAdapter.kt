@@ -36,7 +36,7 @@ class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerVie
         holder.tvDescription.text = description
 
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listPerson[holder.adapterPosition])
+            onItemClickCallback.onItemClicked(listPerson[holder.adapterPosition], position)
         }
     }
 
@@ -46,10 +46,10 @@ class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerVie
         val imgPhoto: ImageView = itemView.findViewById(R.id.img_person)
         val tvName: TextView = itemView.findViewById(R.id.tv_person_name)
         val tvNick: TextView = itemView.findViewById(R.id.tv_person_nick)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_person_desc)
+        val tvDescription: TextView = itemView.findViewById(R.id.tv_person_desc_detail)
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: Person)
+        fun onItemClicked(data: Person, index: Int)
     }
 }

@@ -21,20 +21,21 @@ class FaceDetection {
                     val face: Face = faces[0]
                     val bounds = face.boundingBox
 
-                    val maxWidthToCrop = 480
-                    val cropWidth = if (bounds.width() > maxWidthToCrop) {
-                        maxWidthToCrop
-                    } else {
-                        bounds.width()
-                    }
+                    val width = image.width.coerceAtMost(480)
+                    val height = bounds.height()
 
-                    val cropHeight = (cropWidth * bounds.height()) / bounds.width()
+                    val extraSpace = 50
+                    val left = (bounds.left - extraSpace).coerceAtLeast(0)
+                    val top = (bounds.top - extraSpace).coerceAtLeast(0)
+                    val right = (bounds.right + extraSpace).coerceAtMost(image.width)
+                    val bottom = (bounds.bottom + extraSpace).coerceAtMost(image.height)
+
                     val croppedBitmap = Bitmap.createBitmap(
                         image,
-                        bounds.left,
-                        bounds.top,
-                        bounds.width(),
-                        bounds.height()
+                        left,
+                        top,
+                        right - left,
+                        bottom - top
                     )
 
                     imageView.setImageBitmap(croppedBitmap)

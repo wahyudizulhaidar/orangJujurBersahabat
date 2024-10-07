@@ -48,5 +48,25 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
     </style>
 
+    <style name="TextTitle">
+        <item name="android:textColor">@color/md_theme_onPrimaryContainer</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/robotoslab</item>
+    </style>
+
+    <style name="TextDesc">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/md_theme_onPrimaryContainer</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextContext">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:textColor">@color/md_theme_onPrimaryContainer</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:justificationMode">inter_word</item>
+    </style>
+
     <style name="Theme.Biodata" parent="AppTheme" />
 </resources>

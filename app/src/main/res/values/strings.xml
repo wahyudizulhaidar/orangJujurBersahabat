@@ -7,7 +7,6 @@
     <string name="person_photo">Foto</string>
     <string name="profile">Profile</string>
 
-    <!-- Nama Orang -->
     <string-array name="name_person">
         <item>Rahul Sabara</item>
         <item>Syahrur Ramadhan</item>
@@ -21,7 +20,6 @@
         <item>Naufal</item>
     </string-array>
 
-    <!-- Nama Panggilan -->
     <string-array name="nick_person">
         <item>Rahul</item>
         <item>Syahrur</item>
@@ -35,7 +33,6 @@
         <item>Naufal</item>
     </string-array>
 
-    <!-- Deskripsi Orang -->
     <string-array name="desc_person">
         <item>Gantengnya pace asli Papua</item>
         <item>Orang Bima</item>
@@ -49,7 +46,6 @@
         <item>Ketua Tingkat</item>
     </string-array>
 
-    <!-- Foto Orang -->
     <string-array name="photo_person">
         <item>@drawable/rahul</item>
         <item>@drawable/syahrur</item>
@@ -62,4 +58,24 @@
         <item>@drawable/ramad</item>
         <item>@drawable/naufal</item>
     </string-array>
+
+    <string name="desc_detail_dummy">Mantan ketua OPM asli dari Papua, memperjuangkan kemerdekaannya untuk kemakmuran Land of Dawn. Atas dedikasi beliau maka dia mulai kuliah di UMI jurusan Teknik Informatika agar memperjuangkan kemerdekaannya</string>
+    <string-array name="desc_detail">
+        <item>Mantan ketua OPM asli dari Papua, memperjuangkan kemerdekaannya untuk kemakmuran Land of Dawn. Atas dedikasi beliau maka dia mulai kuliah di UMI jurusan Teknik Informatika tapi enggan ngoding</item>
+        <item>Bapak ngoding HTML, penghuni Aluddin jauh-jauh datang ke UMI hanya untuk menempuh pendidikan</item>
+        <item>Lebih sering nongki di PMTS daripada di kost nya sendiri, kost berfungsi sebagai lemari pakaian</item>
+        <item>KOLAKA pride, kurang tau orangnya karena ambil kelas karyawan</item>
+        <item>Tiyan ade ke BTP naik MX KING</item>
+        <item>LORENG LIPSUMM</item>
+        <item>LORENG LIPSUMM</item>
+        <item>LOREMG LIPSUMM</item>
+        <item>LORENG LIPSUMM</item>
+        <item>LORENG LIPSUMM</item>
+    </string-array>
+
+    <string name="follow_me">Ikuti </string>
+    <string name="social_media1">Facebook</string>
+    <string name="social_media2">Instagram</string>
+    <string name="social_media3">Tiktok</string>
+    <string name="detail_text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</string>
 </resources>

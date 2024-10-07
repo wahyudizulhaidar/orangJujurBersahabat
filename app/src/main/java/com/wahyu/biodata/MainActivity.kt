@@ -1,9 +1,11 @@
 package com.wahyu.biodata
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wahyu.biodata.adapter.ListPersonAdapter
 import com.wahyu.biodata.data.Person
 import com.wahyu.biodata.databinding.ActivityMainBinding
+import com.wahyu.biodata.ui.DetailPerson
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.title = ""
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -71,13 +76,12 @@ class MainActivity : AppCompatActivity() {
         rvMain.adapter = listPersonAdapter
 
         listPersonAdapter.setOnItemClickCallback(object : ListPersonAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Person) {
-                showSelectedPerson(data)
+            override fun onItemClicked(data: Person, index: Int) {
+                val intent = Intent(this@MainActivity, DetailPerson::class.java).apply {
+                    putExtra("PERSON_INDEX", index)
+                }
+                startActivity(intent)
             }
         })
-    }
-
-    private fun showSelectedPerson(person: Person) {
-        Toast.makeText(this, "Kamu memilih " + person.name, Toast.LENGTH_SHORT).show()
     }
 }
