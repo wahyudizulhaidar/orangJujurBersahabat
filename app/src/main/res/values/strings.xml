@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Orang Ganteng</string>
+
+    <string name="person_name">Nama Orang</string>
+    <string name="person_nick">Nama Panggilan</string>
+    <string name="person_desc">Deskripsi</string>
+    <string name="person_photo">Foto</string>
+    <string name="profile">Profile</string>
+
+    <!-- Nama Orang -->
+    <string-array name="name_person">
+        <item>Rahul Sabara</item>
+        <item>Syahrur Ramadhan</item>
+        <item>Muh. Fathir Basir</item>
+        <item>Syahrul Ramadan</item>
+        <item>Tiyan Ade Harianto</item>
+        <item>Muh. Yusriandi</item>
+        <item>Fahruddin Raziki</item>
+        <item>Lukman Majzul</item>
+        <item>Rahmad Hidayat Arman</item>
+        <item>Naufal</item>
+    </string-array>
+
+    <!-- Nama Panggilan -->
+    <string-array name="nick_person">
+        <item>Rahul</item>
+        <item>Syahrur</item>
+        <item>Fathir</item>
+        <item>Syahrul</item>
+        <item>Tiyan</item>
+        <item>Yusriandi</item>
+        <item>Fahruddin</item>
+        <item>Lukman</item>
+        <item>Rahmad</item>
+        <item>Naufal</item>
+    </string-array>
+
+    <!-- Deskripsi Orang -->
+    <string-array name="desc_person">
+        <item>Gantengnya pace asli Papua</item>
+        <item>Orang Bima</item>
+        <item>PMTS cabang Selayar</item>
+        <item>Kolaka</item>
+        <item>Anak baik hati MX KING selalu di hati</item>
+        <item>Orang paling jujur sedunia</item>
+        <item>Pintar pake bahasa Bima</item>
+        <item>MABA angkatan 2022</item>
+        <item>Enrekang kota</item>
+        <item>Ketua Tingkat</item>
+    </string-array>
+
+    <!-- Foto Orang -->
+    <string-array name="photo_person">
+        <item>@drawable/rahul</item>
+        <item>@drawable/syahrur</item>
+        <item>@drawable/fatir</item>
+        <item>@drawable/danu</item>
+        <item>@drawable/tiyan</item>
+        <item>@drawable/yuse</item>
+        <item>@drawable/fahru</item>
+        <item>@drawable/lukman</item>
+        <item>@drawable/ramad</item>
+        <item>@drawable/naufal</item>
+    </string-array>
+</resources>
