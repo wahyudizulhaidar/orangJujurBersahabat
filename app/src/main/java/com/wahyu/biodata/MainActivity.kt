@@ -4,15 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.wahyu.biodata.adapter.ListPersonAdapter
 import com.wahyu.biodata.data.Person
 import com.wahyu.biodata.databinding.ActivityMainBinding
+import com.wahyu.biodata.ui.Biodata
 import com.wahyu.biodata.ui.DetailPerson
 
 class MainActivity : AppCompatActivity() {
@@ -23,8 +24,10 @@ class MainActivity : AppCompatActivity() {
     private val list = ArrayList<Person>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -47,7 +50,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.profile -> {
-                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, Biodata::class.java)
+                startActivity(intent)
                 return true
             }
 

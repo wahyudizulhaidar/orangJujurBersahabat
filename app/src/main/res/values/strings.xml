@@ -7,6 +7,9 @@
     <string name="person_photo">Foto</string>
     <string name="profile">Profile</string>
 
+    <string name="my_name">Muh. Zulhaidar Wahyudi</string>
+    <string name="email">zulhaidarwahyudi@gmail.com</string>
+
     <string-array name="name_person">
         <item>Rahul Sabara</item>
         <item>Syahrur Ramadhan</item>

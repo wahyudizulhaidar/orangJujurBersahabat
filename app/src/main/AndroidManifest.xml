@@ -10,12 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Biodata"
-        tools:targetApi="31">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.Biodata"
+            android:exported="false" />
         <activity
             android:name=".ui.DetailPerson"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.Biodata.Splash"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
