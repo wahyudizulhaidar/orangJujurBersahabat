@@ -1,5 +1,6 @@
 package com.wahyu.biodata.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -35,6 +36,7 @@ class DetailPerson : AppCompatActivity() {
         binding.imgSocialmediafb.setImageResource(R.drawable.facebook)
         binding.imgSocialmedia2.setImageResource(R.drawable.instagram)
         binding.imgSocialmedia3.setImageResource(R.drawable.tiktok)
+        binding.actionShare.setImageResource(R.drawable.share)
 
         val resourceId = personPhoto.getResourceId(index, -1)
         if (resourceId != -1) {
@@ -43,7 +45,21 @@ class DetailPerson : AppCompatActivity() {
             Log.e("DetailPerson", "Gambar tidak ditemukan untuk index: $index")
 //            binding.imgPerson.setImageResource(R.drawable.rahul)
         }
-
         personPhoto.recycle()
+
+        binding.actionShare.setOnClickListener {
+            shareContent()
+        }
+
+    }
+
+    private fun shareContent() {
+        val shareText = binding.tvDetailPerson.text.toString()
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, shareText)
+            type = "text/plain" // Perbaiki tipe MIME menjadi "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
 }
