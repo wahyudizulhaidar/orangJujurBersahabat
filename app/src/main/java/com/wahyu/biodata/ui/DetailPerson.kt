@@ -3,6 +3,7 @@ package com.wahyu.biodata.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.wahyu.biodata.R
@@ -23,15 +24,16 @@ class DetailPerson : AppCompatActivity() {
 
         val personName = resources.getStringArray(R.array.name_person)
         val personNick = resources.getStringArray(R.array.nick_person)
-        val personDescDetail = resources.getStringArray(R.array.desc_detail)
+        val personDescDetail = resources.getStringArray(R.array.desc_person)
         val personPhoto = resources.obtainTypedArray(R.array.photo_person)
+        val personDetail = resources.getStringArray(R.array.desc_detail)
 
         binding.tvPersonName.text = personName[index]
         binding.tvPersonNick.text = personNick[index]
         binding.tvPersonDescDetail.text = personDescDetail[index]
 
         binding.tvFollow.text = getString(R.string.follow_me)
-        binding.tvDetailPerson.text = getString(R.string.detail_text)
+        binding.tvDetailPerson.text = personDetail[index]
 
         binding.imgSocialmediafb.setImageResource(R.drawable.facebook)
         binding.imgSocialmedia2.setImageResource(R.drawable.instagram)
@@ -43,9 +45,24 @@ class DetailPerson : AppCompatActivity() {
             binding.imgPerson.setImageResource(resourceId)
         } else {
             Log.e("DetailPerson", "Gambar tidak ditemukan untuk index: $index")
-//            binding.imgPerson.setImageResource(R.drawable.rahul)
+//            binding.imgPerson.setImageResource(R.drawable.nophoto)
         }
         personPhoto.recycle()
+
+        binding.imgSocialmediafb.setOnClickListener {
+            val message = getString(R.string.social_media1)
+            showToast(message)
+        }
+
+        binding.imgSocialmedia2.setOnClickListener {
+            val message = getString(R.string.social_media2)
+            showToast(message)
+        }
+
+        binding.imgSocialmedia3.setOnClickListener {
+            val message = getString(R.string.social_media3)
+            showToast(message)
+        }
 
         binding.actionShare.setOnClickListener {
             shareContent()
@@ -58,8 +75,13 @@ class DetailPerson : AppCompatActivity() {
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, shareText)
-            type = "text/plain" // Perbaiki tipe MIME menjadi "text/plain"
+            type = "text/plain"
         }
         startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
 }

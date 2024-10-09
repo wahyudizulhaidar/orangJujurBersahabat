@@ -21,9 +21,6 @@ class FaceDetection {
                     val face: Face = faces[0]
                     val bounds = face.boundingBox
 
-                    val width = image.width.coerceAtMost(480)
-                    val height = bounds.height()
-
                     val extraSpace = 50
                     val left = (bounds.left - extraSpace).coerceAtLeast(0)
                     val top = (bounds.top - extraSpace).coerceAtLeast(0)

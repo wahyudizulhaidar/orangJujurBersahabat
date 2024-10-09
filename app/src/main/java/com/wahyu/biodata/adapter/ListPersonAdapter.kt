@@ -12,7 +12,6 @@ import com.wahyu.biodata.data.Person
 import com.wahyu.biodata.tool.FaceDetection
 
 // Menggunakan Model Machine Learning Face Detector
-
 class ListPersonAdapter(private val listPerson: ArrayList<Person>) : RecyclerView.Adapter<ListPersonAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
     private val faceDetection = FaceDetection()

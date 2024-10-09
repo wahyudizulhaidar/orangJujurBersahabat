@@ -58,7 +58,7 @@
                 style="@style/TextContext"
                 android:textSize="20sp"
                 android:layout_marginTop="8dp"
-                android:text="@string/desc_detail_dummy" />
+                android:text="@string/person_desc" />
         </LinearLayout>
 
         <TextView
@@ -120,7 +120,7 @@
             android:textSize="18sp"
             android:layout_margin="8dp"
             app:layout_constraintTop_toBottomOf="@id/ll_socialmedia"
-            android:text="@string/detail_text"
+            tools:srcCompat="@string/desc_detail_dummy"
             android:fontFamily="@font/nunito"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
